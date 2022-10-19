@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
+body {
+    padding: 0px;
+    margin: 0px;
+}
+#gridDiv {
+    padding: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10vw repeat(4, 1fr);
+    grid-template-rows: 7vh 5vh repeat(10, 10fr);
+    margin: 0px;
+    
+}
+.header{display: flex;
+    grid-column: 2/6;
+    background-color: black;
+    color: white;
+    align-items:center ;
+    justify-content: center;
+    font-size: 200%;
+
+}
+#HeaderText{
+    font-family: "Pacifico", "Times New Roman", cursive;
+}
+
+#title{
+   
+    border-top: 3px solid red;
+    border-bottom: 3px solid red ;
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    grid-row: 2/3;
+    grid-column: 1/6;
+    color: white;
+    font-family: "Bebas Neue", "Times New Roman", cursive;
+    font-size: 250%;
+}
+
+#car1{
+    margin:10%;
+    margin-left: 5%;
+    grid-row: 3/5;
+    grid-column: 1/4;
+    width: 40vw;
+    height: auto;
+}
+#car2{
+    margin-top: 20%;
+    grid-row: 3/5;
+    grid-column: 4/6;
+    width: 40vw;
+    height: auto;
+}
+#car3{
+    margin:6%;
+    grid-row: 5/7;
+    grid-column: 1/4;
+    width: 40vw;
+    height: auto;
+}
+#car4{
+    grid-row: 5/7;
+    grid-column: 4/6;
+    width: 40vw;
+}
+#car5{
+    margin-left: 7%;
+    grid-row: 7/9;
+    grid-column: 1/4;
+    width: 40vw;
+}
+#car6{
+    margin-top: 5%;
+    grid-row: 7/9;
+    grid-column: 4/6;
+    width: 40vw;
+}
+#car7{
+    padding-top: 3%;
+    grid-row: 9/11;
+    grid-column: 1/4;
+    width: 40vw;
+    margin-left: 7%;
+
+}
+#car8{padding-left: 5%;
+    grid-row: 9/11;
+    grid-column: 4/6;
+    width: 35vw;
+}
+
+#car9{
+    grid-row: 11/13;
+    grid-column: 1/6;
+    width: 90vw;
+    padding-left: 4vw;
+}
+
+@keyframes WheelImage{
+    0% {transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+#WheelImage img{height: 5vh;
+    margin-top: 5px;
+    margin-left: 10px;
+    animation-name: WheelImage;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    }
+
+@keyframes SideViewCar{
+    0% {margin-left: 75vw; margin-right: 0vw;}
+    20%{opacity: 0;}
+    25%{opacity: 0;}
+    40%{opacity: 0;
+    transform: rotateY(0deg);}
+    50% {margin-left: 0vw; margin-right: 80vw;
+         transform: rotateY(180deg);
+         opacity: 1;
+        }
+    60%{opacity: 0;
+    transform: rotateY(180deg);}
+    75%{opacity: 0;}
+    80%{opacity: 0;
+    transform: rotatey(180deg);}
+    100% {margin-left: 75vw; margin-right: 0vw;
+        transform: rotateY(0deg);
+        opacity: 1;
+        }
+}
+#SideViewCar {
+    position: absolute;
+    z-index: 1;
+    animation-name: SideViewCar;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+#SideViewCar img{
+    height: 5vh;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    grid-row: 1/2;
+    grid-column: 1/2  ;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+}
+@keyframes aniMenu{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+
+}
+.menu:hover {
+    height: 25vh;
+    width: 25vh;
+    transition: height 0.5s;
+    
+}
+.menu:hover #menuText{
+    animation: aniMenu 2s;
+}
+
+
+.menu:hover .menu-content{
+    display: flex;
+}
+.menu-content{
+    display: none;
+    position: relative;
+    z-index: 3;
+    width: 75%;
+}
+.menu-content ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    list-style: none;
+
+    padding: 5px;
+    margin: 0px;
+ 
+}
+@keyframes aparitie {
+    0% {opacity: 0%;}
+    100%{opacity: 100%;}    
+}
+.menu-content ul a:hover{
+    background-color: rgb(221, 6, 6);
+    transition: background-color 0.25s;
+    color: black;
+    border: 2px solid grey;
+
+}
+.menu-content ul a
+{   display: flex;
+    justify-content: center;
+    font-size: medium;
+    padding:3px;
+    border: 2px solid rgb(221, 6, 6);
+    background-color: rgb(64, 64, 65);
+    border-radius: 20px ;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    animation: aparitie 1s;
+}
+
+
+.banner{
+    height: 5vh;
+    border-top:3px solid red ;
+    display: flex;
+    grid-column: 1/5;
+    grid-row: 10/13;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes myName {
+    0%{
+        color: greenyellow;
+    }
+    12%{
+        color: yellow;
+    }
+    25%{
+        color: orange;
+    }
+    37%{
+        color: red;
+    }
+    50%{
+        color: purple;
+    }
+    62%{
+        color:aqua;
+    }
+    75%{
+        color: blue;
+    }
+
+    85%{
+        color: darkgreen;
+    }
+
+    100%{
+        color: greenyellow;
+    }
+    
+}
+
+#myname{
+    padding-left:5px;
+    padding-right: 5px;
+    animation-name: myName;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@media only screen and (min-width:768px) {
+    html{
+        background-color: black;
+    }
+    .menu{
+        border-bottom-right-radius: 35%;
+        position: fixed;
+        width: 10vw;
+        height: 7vh;
+        font-size: 180%;
+
+        
+
+    }
+    
+}
+@media only screen and (max-width: 768px) and (min-width:600px) {
+    .header {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    body{
+        background-color: black;
+    }
+
+    .menu{
+        grid-column: 1/6;
+        grid-row: 2/3;
+        height: 5vh;
+    }
+    .menu:hover .menu-content{
+        width: 90%;
+        
+    }
+    #title{
+        grid-column: 3/6;
+    }
+    .menu:hover {
+        position: relative;
+        width: 100%;
+    }
+    .banner{
+        grid-row: 10/12;
+        grid-column: 2/5;
+    }
+ 
+
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: black;
+    }
+    #gridDiv {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 7vh 1fr repeat(17, 3fr);
+
+
+        
+    }
+
+
+    .header {
+        grid-row: 1/2;
+        grid-column: 1;
+    }
+
+
+    .menu{
+        border-bottom-left-radius: 35%;
+        justify-self: end;
+        opacity: 0.7;
+        padding: 10px;
+        grid-row: 2/3;
+        grid-column: 1;
+        position:fixed
+        
+    }
+    .menu:hover {
+        opacity: 1;
+    }
+    .banner{
+        flex-direction: column;
+        grid-row: 8/10;
+        grid-column: 1/2;
+        font-size: 75%;
+    }
+
+    #car1{
+        margin-left: 4vw;
+        grid-row: 3/5;
+        grid-column: 1;
+        width: 90vw;
+        
+    }
+    #car2{
+        margin-left: 4vw;
+        grid-row: 5/7;
+        grid-column: 1;
+        width: 90vw;
+        height: auto;
+    }
+    #car3{
+        margin-left:4vw;
+        grid-row: 7/9;
+        grid-column: 1;
+        width: 90vw;
+        height: auto;
+    }
+    #car4{
+        margin-left: 4vw;
+        grid-row: 9/11;
+        grid-column: 1;
+        width: 90vw;
+    }
+    #car5{
+        margin-left: 4vw;
+        grid-row: 11/13;
+        grid-column: 1;
+        width: 90vw;
+    }
+    #car6{
+        margin-left: 4vw;
+        grid-row: 13/15;
+        grid-column: 1;
+        width: 90vw;
+    }
+    #car7{
+        margin-left: 4vw;
+        grid-row: 15/17;
+        grid-column: 1;
+        width: 90vw;
+        margin-left: 7%;
+    
+    }
+    #car8{
+        margin-left: 4vw;
+        grid-row: 17/19;
+        grid-column: 1;
+        width: 80vw;
+    }
+    
+    #car9{
+        padding-top: 2%;
+        padding-bottom: 2%;
+        grid-row: 19/21;
+        grid-column: 1;
+        width: 90vw;
+        padding-left: 4vw;
+    }
+}
